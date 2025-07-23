@@ -3,78 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <title>Bio Creative</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-areas:
+                "header header"/*ligne1*/
+                "col1 col2 "/*ligne2*/
+                "footer footer";/*ligne3*/
+            gap: 20px;
+            margin: 40px;
+            background-color:   #f5f5f5;
+        }
+            
+
+        header {
+            grid-area: header;
+            background: linear-gradient(to right, #ffc0cb , #87ceeb , #dda0dd);
+            text-align: center;
+            
+        }
+
+        .conteneur1 {
+            grid-area: col2;
+            background-color:  #ffc0cb ;
+            margin-left: 10px;
+            padding: 60px 20px 20px 20px;
+        }
+
+        .conteneur2 {
+            grid-area: col1;
+            background-color:  #87ceeb;
+            width: 800px;
+            padding: 30px 20px 20px 50px;
+            
+        }
+
+        .conteneur3 {
+            grid-area: footer;
+            /* margin-top: 20px; */
+            background: linear-gradient(to right, #ffc0cb 0% , #87ceeb 50% , #dda0dd 100%);
+            padding-left: 20px;
+            font-weight: bold;
+        }
+        
+        p{
+            text-align: justify;
+        }
+
+        #profil{
+            border: 1px solid #ff44ff;
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+
+        .conteneur1_1{
+            display: flex;
+            flex-direction: column;/*dispose les elements en colonne*/
+            justify-content: center;/*centrer verticalement*/
+            align-items: center;/*centrer horizontalement*/
+            gap: 15px;
+
+        }
+
+        .conteneur1 h2{
+            text-align: center;
+        }
+
+        .conteneur1 div h2{
+            margin-top:30px ;
+        }
+
+        .conteneur2_1{
+            display: flex;
+            flex-wrap: wrap;
+            gap:20px;
+            padding: 0;
+
+        }
+
+        .conteneur2_1 li{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 150px; /*force tous les blocs passion/image à avoir la même largeur que mes images;
+            Pour donner une mm largeur a mes <li> */
+        }
+
+        .img_passion{
+            border-radius: 10px;
+        }
+
+        .conteneur2 section ol u{
+            text-decoration: none;
+
+        }
+        .conteneur1 section p u{
+            text-decoration: none;
+            color:#7a0a7a;
+        }
+        .conteneur1 table th{
+            color:#7a0a7a;
+            
+        }
+        .conteneur1 table,
+        .conteneur1 th,
+        .conteneur1 tr,
+        .conteneur1 td{
+            border: 1px double #000;
+            border-collapse: collapse;/*fusionne les bordures*/
+        }
+        .conteneur1 table{
+            width: 40%;/*apparemment il ne sert a rien*/
+            margin-bottom: 30px;
+        }
+        .conteneur1 td{
+            text-align: center;
+        }
+        .lien_utile{
+            text-align: center;
+        }
+
+        .btn{
+            border: 1px solid #000;
+            border-radius: 7px;
+            background-color:#7a0a7a;
+            color: #fff;
+            padding: 10px 20px 10px 20px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            transform: scale(1);
+        }
+        .btn:hover{
+            background-color:  #fff;
+            color:#7a0a7a;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+            transform: scale(1.02);
+
+        }
+
+    </style>
 </head>
 <body>
     <header>
         <h1><u>BIENVENUE SUR MON SITE !</u></h1>
-        <img src="img/profil.jpg"  alt= "profil" width="200" height="260">
     </header>
+    <div class="conteneur1">
+        <div class="conteneur1_1">
+            <img id="profil" src="img/profil.jpg"  alt= "mon_profil" width="200" height="260">
+            <table>
+                <caption>Informations Utiles</caption>
+                <tr>
+                    <th>Nom</th>
+                    <th>Age</th>
+                    <th>Niveau</th>
+                    <th>Hobby</th>
+                </tr>
 
-    <section>
-        <h2>A propos de moi</h2>
-        <p><em>Auremeraude</em> est une jeune fille passionnée par le <u><strong>dessin</strong></u>
-        et la <u><strong>mode</strong></u>, alliant créativité et élégance. Curieuse et inspirée par les tendances, 
-        elle aime donner vie à des univers visuels uniques. Son style audacieux et son sens du détail 
-        font d’elle une talentueuse passionnée, toujours à la recherche de nouveaux défis artistiques.</p>
-    </section>
+                <tr>
+                    <td>Auremeraude</td>
+                    <td>15</td>
+                    <td>Secondaire</td>
+                    <td>Dessin</td>
+                </tr>
+            </table>
+        </div>
+        
+        <section>
+            <h2>A propos de moi</h2>
+            <p><em>Auremeraude</em> est une jeune fille passionnée par le <u><strong>dessin</strong></u>
+            et la <u><strong>mode</strong></u>, alliant créativité et élégance. Curieuse et inspirée par les tendances, 
+            elle aime donner vie à des univers visuels uniques. Son style audacieux et son sens du détail 
+            font d’elle une talentueuse passionnée, toujours à la recherche de nouveaux défis artistiques.</p>
+        </section>
+
+        <div> 
+            <h2>Quelques liens utiles</h2>
+            <p class="lien_utile"><a href="https://developer.mozilla.org/">Documentation MDN</a></p>
+            <p class="lien_utile"><a href="contact.html"><button class="btn">Me contacter</button></a></p>
+        </div>
+    </div>
     
-    <section>
-        <h2>Mes passions</h2>
-        <ul>
-            <li>Le dessin</li> <img src="img/passion2.jpeg" alt="faire du dessin" width="150" height="200">
-            <li>La mode</li> <img src="img/passion3.jpg" alt="mode" width="150" height="200">
-            <li>Le sport</li> <img src="img/passion1.jpg" alt="faire du velo" width="150" height="200">
-            <li>La danse</li> <img src="img/passion4.jpg" alt="faire de la danse" width="150" height="200">
-        </ul>
-    </section>
+    <div class="conteneur2">
+        <section>
+            <h2>Mes passions</h2>
+            <ul class="conteneur2_1">
+                <li>Le dessin <img class="img_passion" src="img/passion2.jpeg" alt="faire du dessin" width="150" height="200"></li> 
+                <li>La mode <img class="img_passion" src="img/passion3.jpg" alt="mode" width="150" height="200"></li>
+                <li>Le sport <img  class="img_passion" src="img/passion1.jpg" alt="faire du velo" width="150" height="200"></li> 
+                <li>La danse  <img class="img_passion" src="img/passion4.jpg" alt="faire de la danse" width="150" height="200"></li>
+            </ul>
+        </section>
 
-    <section>
-        <h2>Mes objectifs</h2>
-        <ol>
-            <li><u>Suivre</u> une formation en design graphique</li>
-            <li><u>Suivre</u> une formation en mannequinat et stylisme</li>
-            <li><u>Suivre</u> une formation en danse pro</li>
-        </ol>
-    </section>
+        <section>
+            <h2>Mes objectifs</h2>
+            <ol>
+                <li><u>Suivre</u> une formation en design graphique</li>
+                <li><u>Suivre</u> une formation en mannequinat et stylisme</li>
+                <li><u>Suivre</u> une formation en danse pro</li>
+            </ol>
+        </section>
 
-    <section>
-        <h2>Mes inspirations</h2>
-        Elle a été inspirée par les programmes télévisés tels que les Reines du Shopping, 
-        Dora l'exploratrice et bien d'autres.
-        <p>Ci-joint une video sur les Reines du Shopping:</p>  <video controls src="audio_video/Reines_shopping.mp4"></video>
-        <p>Ainsi qu'un de ses sons favoris:</p> <audio controls src="audio_video/Black_m_La_nuit_porte_conseil_.mp4"></audio> 
-    </section>
+        <section>
+            <h2>Mes inspirations</h2>
+            Elle a été inspirée par les programmes télévisés tels que les Reines du Shopping, 
+            Dora l'exploratrice et bien d'autres.
+            <p>Ci-joint une video sur les Reines du Shopping:</p>  <video class="img_passion" controls src="audio_video/Reines_shopping.mp4"></video>
+            <p>Ainsi qu'un de ses sons favoris:</p> <audio controls src="audio_video/Black_m_La_nuit_porte_conseil_.mp4"></audio> 
+        </section>
 
-    <div> 
-        <h2>Quelques liens</h2>
-        <a href="#id-contact">contact</a>
-        <a href="https://developer.mozilla.org/">Documentation MDN</a>
+       
     </div>
 
-    <section id="id-contact">
-        <h2>Contact</h2>
-        <address>
-            <a href="mailto:auremeraude@gmail.com">Me contacter</a><br>
-            Yaoundé, Cameroun
-        </address><br>
-
-        <table border="1" rules="all" width="40%">
-            <caption>Informations Utiles</caption>
-            <tr>
-                <th>Nom</th>
-                <th>Age</th>
-                <th>Niveau</th>
-                <th>Hobby</th>
-            </tr>
-
-            <tr>
-                <td>Auremeraude</td>
-                <td>15</td>
-                <td>Secondaire</td>
-                <td>Dessin</td>
-            </tr>
-        </table>
-    </section>
+    <footer class="conteneur3">
+        <p><p>&copy;Copyright 2025 par Aurelie. Tous droits reversés.</p></p>
+    </footer>
    
 </body>
 </html>
